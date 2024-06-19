@@ -1,8 +1,6 @@
 import json
 from abc import ABC, abstractmethod
 
-from src.classes.vacancy import Vacancy
-
 
 class VacancyToFile(ABC):
     """Интерфейс для классов сохранения вакансий в файл."""
@@ -23,7 +21,7 @@ class VacancyToFile(ABC):
 class VacancyToJSON(VacancyToFile):
     """Класс для сохранения вакансий в JSON файл"""
 
-    def add_vacancy_list(self, link: str, vacancies: list[Vacancy]) -> None:
+    def add_vacancy_list(self, link: str, vacancies: list[dict]) -> None:
         """
         Добавляет список вакансий в JSON файл.
         :param link: Ссылка на файл
