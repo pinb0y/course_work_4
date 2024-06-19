@@ -13,8 +13,14 @@ def user_interaction():
 
     search_query: str = input("Введите поисковый запрос: ")
     top_n: str = input("Введите количество вакансий для вывода(по умолчанию выводит все вакансии): ")
-    salary_range: str = input("Введите диапазон зарплат(например, 100000 - 120000): ")
 
+    while True:
+        salary_range: str = input("Введите диапазон зарплат(например, 100000 - 120000): ")
+        if "-" in salary_range:
+            salary_range_list = [int(num.strip()) for num in salary_range.split('-')]
+            if salary_range_list[0] <= salary_range_list[1]:
+                break
+        print("Некорректный диапазон")
     print()
 
     hh_parser = HeadHunterVacanciesParserAPI()

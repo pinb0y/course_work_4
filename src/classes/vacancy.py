@@ -71,7 +71,7 @@ class HeadhunterVacancy(Vacancy):
             return "Зарплата не указана"
 
     @classmethod
-    def make_object_list(cls, vacancies: list[dict]) -> list[Vacancy]:
+    def make_object_list(cls, vacancies: list[dict]) -> list:
         """
         Создает список объектов вакансий.
         :param vacancies: Список вакансий из JSON файла

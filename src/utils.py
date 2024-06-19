@@ -1,7 +1,7 @@
-from src.classes.vacancy import Vacancy
+from src.classes.vacancy import HeadhunterVacancy
 
 
-def sort_vacancies(vacancies: list[Vacancy]) -> list[Vacancy]:
+def sort_vacancies(vacancies: list[HeadhunterVacancy]) -> list[HeadhunterVacancy]:
     """
     Сортирует вакансии по увеличению зарплат "от".
     :param vacancies: Список объектов класса вакансия.
@@ -11,7 +11,7 @@ def sort_vacancies(vacancies: list[Vacancy]) -> list[Vacancy]:
     return sorted(vacancies)
 
 
-def print_top_n_vacancies(quantity: str, all_vacancies: int, vacancies: list[Vacancy]) -> None:
+def print_top_n_vacancies(quantity: str, all_vacancies: int, vacancies: list[HeadhunterVacancy]) -> None:
     """
     Выводит на экран заданное пользователем количество вакансий.
     :param all_vacancies: Общее количество вакансий
@@ -27,7 +27,7 @@ def print_top_n_vacancies(quantity: str, all_vacancies: int, vacancies: list[Vac
         print(vacancies[i])
 
 
-def vacancy_salary_filter(vacancies: list[Vacancy], salary_range: str) -> list[Vacancy]:
+def vacancy_salary_filter(vacancies: list[HeadhunterVacancy], salary_range: str) -> list[HeadhunterVacancy]:
     """
     Фильтрует список объектов класса вакансия, согласно заданному диапазону зарплат.
     :param vacancies: Список объектов класса вакансия.
