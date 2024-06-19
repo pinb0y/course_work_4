@@ -66,7 +66,7 @@ class HeadhunterVacancy(Vacancy):
         elif self.__salary_from and not self.__salary_to:
             return f"от {self.__salary_from}"
         elif not self.__salary_from and self.__salary_to:
-            return f"от {self.__salary_to}"
+            return f"до {self.__salary_to}"
         else:
             return "Зарплата не указана"
 
