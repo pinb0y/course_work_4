@@ -11,14 +11,18 @@ def sort_vacancies(vacancies: list[Vacancy]) -> list[Vacancy]:
     return sorted(vacancies)
 
 
-def print_top_n_vacancies(quantity: int, vacancies: list[Vacancy]) -> None:
+def print_top_n_vacancies(quantity: str, all_vacancies: int, vacancies: list[Vacancy]) -> None:
     """
     Выводит на экран заданное пользователем количество вакансий.
-    :param quantity: Количество вакансий
+    :param all_vacancies: Общее количество вакансий
+    :param quantity: Количество вакансий запрошенное пользователем.
     :param vacancies: Список объектов класса вакансия.
     :return: None
     """
-
+    if quantity:
+        quantity = int(quantity)
+    else:
+        quantity = all_vacancies
     for i in range(quantity):
         print(vacancies[i])
 

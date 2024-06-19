@@ -8,5 +8,3 @@ DATA_PATH = ROOT_PATH.joinpath("data")
 
 # путь к JSON файлу с вакансиями
 VACANCIES_JSON_PASS = DATA_PATH.joinpath("vacancies.json")
-
-

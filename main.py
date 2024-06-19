@@ -11,9 +11,9 @@ def user_interaction():
     :return: None
     """
 
-    search_query = input("Введите поисковый запрос: ")
-    top_n = int(input("Введите количество вакансий для вывода: "))
-    salary_range = input("Введите диапазон зарплат(например, 100000 - 120000): ")
+    search_query: str = input("Введите поисковый запрос: ")
+    top_n: str = input("Введите количество вакансий для вывода(по умолчанию выводит все вакансии): ")
+    salary_range: str = input("Введите диапазон зарплат(например, 100000 - 120000): ")
 
     print()
 
@@ -31,7 +31,10 @@ def user_interaction():
     sorted_vacancies = sort_vacancies(vacancies_list)
     filtered_vacancies = vacancy_salary_filter(sorted_vacancies, salary_range)
 
-    print_top_n_vacancies(top_n, filtered_vacancies)
+    all_found_vacancies_quantity = len(filtered_vacancies)
+    print(f"Всего {all_found_vacancies_quantity} вакансий \n")
+
+    print_top_n_vacancies(top_n, all_found_vacancies_quantity,  filtered_vacancies)
 
 
 if __name__ == "__main__":
