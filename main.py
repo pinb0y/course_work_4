@@ -1,7 +1,7 @@
 from src.classes.vacancies_parser_api import HeadHunterVacanciesParserAPI
 from src.classes.vacancy import HeadhunterVacancy
 from src.classes.vacancy_to_file import VacancyToJSON
-from src.settings import VACANCIES_JSON_PASS
+from src.settings import VACANCIES_JSON_PATH
 from src.utils import sort_vacancies, print_top_n_vacancies, vacancy_salary_filter
 
 
@@ -29,9 +29,9 @@ def user_interaction():
     vacancies = hh_parser.vacancies
 
     vacancies_to_json = VacancyToJSON()
-    vacancies_to_json.add_vacancy_list(VACANCIES_JSON_PASS, vacancies)
+    vacancies_to_json.add_vacancy_list(VACANCIES_JSON_PATH, vacancies)
 
-    vacancies_from_json = vacancies_to_json.get_vacancy(VACANCIES_JSON_PASS)
+    vacancies_from_json = vacancies_to_json.get_vacancy(VACANCIES_JSON_PATH)
 
     vacancies_list = HeadhunterVacancy.make_object_list(vacancies_from_json)
     sorted_vacancies = sort_vacancies(vacancies_list)
